@@ -18,7 +18,14 @@
                 <label>Tên sản phẩm: </label> <b>@Model.TenSP</b>
             </div>
             <div class="col-md-6">
-                <label>Tên danh mục: </label> <b>@Model.DanhMuc.TenDM</b>
+                @if (ViewData["MaDM"] != null)
+                {
+                    <label>Tên danh mục: </label> <b>@ViewData["MaDM"]</b>
+                }
+                else
+                {
+                    <label>Tên danh mục: </label> <b>@Model.DanhMuc.TenDM</b>
+                }
             </div>
         </div>
         <div class="row py-2">
@@ -58,10 +65,10 @@
             </div>
         </div>
 
-        @if (ViewBag.Error != null)
+        @if (ViewData["Error"] != null)
         {
             <div class="row py-1 alert alert-danger text-center">
-                <p class="text-center title-error">@ViewBag.Error</p>
+                <p class="text-center title-error">@ViewData["Error"]</p>
             </div>
         }
 

@@ -287,7 +287,9 @@ namespace HTComputer.Areas.Admin.Controllers
             }
             catch (Exception e)
             {
-                ViewBag.Error = "Sản phẩm liên kết với các mục khác vui lòng xóa chúng trước khi xóa sản phẩm!";
+                ViewData["Error"] = "Sản phẩm liên kết với các mục khác vui lòng xóa chúng trước khi xóa sản phẩm!";
+                DanhMuc danhMuc = db.DanhMucs.Find(sanPham.MaDM);
+                ViewData["MaDM"] = danhMuc.TenDM;
                 return View(sanPham);
             }
         }

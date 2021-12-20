@@ -229,9 +229,10 @@ namespace HTComputer.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
+            DanhMuc danhMuc = new DanhMuc();
             try
             {
-                DanhMuc danhMuc = db.DanhMucs.Find(id);
+                danhMuc = db.DanhMucs.Find(id);
                 if(danhMuc == null)
                 {
                     return RedirectToAction("Index");
@@ -242,7 +243,8 @@ namespace HTComputer.Areas.Admin.Controllers
             }
             catch
             {
-                return RedirectToAction("ServerError", "ErrorAdmin");
+                ViewData["Error"] = "Danh mục liên kết với các mục khác vui lòng xóa chúng trước khi xóa danh mục này!";
+                return View(danhMuc);
             }
             
         }

@@ -20,6 +20,14 @@
         <div class="row py-1">
             <img src="@Url.Content(ImagePath)" width="100" class="img-thumbnail" alt="Alternate Text" />
         </div>
+
+        @if (ViewData["Error"] != null)
+        {
+            <div class="row py-1 alert alert-danger text-center">
+                <p class="text-center title-error">@ViewData["Error"]</p>
+            </div>
+        }
+
         <div class="py-3 pb-4 border-bottom">
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
