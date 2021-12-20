@@ -1,0 +1,33 @@
+﻿@model IEnumerable<HTComputer.Models.SanPham>
+
+@{
+    ViewBag.Title = "New";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="new-page">
+    <div class="size-new">
+        <h4><b>THÔNG TIN KHUYẾN MÃI</b></h4>
+        @foreach (var item in Model)
+        {
+            <a href="/Home/ProductDetails?id=@item.MaSP">
+                <div class="row row-new">
+                    <div class="col-4 img-new">
+                        @{ string ImagePath = "~/Areas/Admin/Assets/images/" + item.AnhSP; }
+                        <img src="@Url.Content(ImagePath)" width="250" height="190" />
+                    </div>
+                    <div class="col-6 info-new-row d-inline">
+                        <h6><b>@item.TenSP</b></h6>
+
+                        <br />
+                        <h6>Khuyến mãi lên đến: </h6>
+                        <br/>
+                        <h4><b class="text-danger">@item.PhanTramKM%</b></h4>
+                    </div>
+                </div>
+        </a>
+            
+        }
+    </div>
+    
+</div>
+

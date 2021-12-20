@@ -1,0 +1,73 @@
+﻿@model HTComputer.Models.LienHe
+
+@{
+    ViewBag.Title = "Contact";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section breadcrumb{
+    <!-- Breadcrumb Begin -->
+    <div class="breadcrumb-option">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb__links">
+                        <a href="/"><i class="fa fa-home"></i> Trang Chủ</a>
+                        <span>Liên hệ</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Breadcrumb End -->
+}
+
+<section class="contact spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-6">
+                <div class="contact__content">
+                    <div class="contact__address">
+                        <h5>Thông tin liên hệ</h5>
+                        <ul>
+                            <li>
+                                <h6><i class="fa fa-map-marker"></i> Địa chỉ</h6>
+                                <p>@Model.DiaChi</p>
+                            </li>
+                            <li>
+                                <h6><i class="fa fa-calendar"></i> Thời gian làm việc</h6>
+                                <p>@Model.ThoiGianLamViec</p>
+                            </li>
+                            <li>
+                                <h6><i class="fa fa-phone"></i> Số điện thoại</h6>
+                                <p><span>@Model.DienThoai</span></p>
+                            </li>
+                            <li>
+                                <h6><i class="fa fa-envelope-open"></i> Email</h6>
+                                <p>@Model.Email</p>
+                            </li>
+
+                            <li>
+                                <h5>Giới thiệu HT SHOP</h5>
+                                <p>
+                                    Nguyễn Minh Hiếu - 51800386<br>Lê Thanh Tùng - 51800830
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+
+                <div class="contact__map">
+                    <iframe height="500"
+                            frameborder="0"
+                            scrolling="no"
+                            marginheight="0"
+                            marginwidth="0"
+                            src="https://maps.google.com/maps?width=100%25&amp;height=500&amp;hl=en&amp;q=19%20nguy%E1%BB%85n%20h%E1%BB%AFu%20th%E1%BB%8D+(Chuy%C3%AAn%20%C4%91%E1%BB%81%20c%C3%B4ng%20ngh%E1%BB%87%20ph%E1%BA%A7n%20m%E1%BB%81n)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
