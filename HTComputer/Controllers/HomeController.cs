@@ -150,7 +150,7 @@ namespace HTComputer.Controllers
                 else
                 {
                     //KIỂM TRA ĐỊA CHỈ EAMIL CÓ TỒN TẠI HAY KHÔNG
-                    var user = db.TaiKhoans.SingleOrDefault(u => u.DiaChiEmail.Equals(taiKhoan.DiaChiEmail));
+                    var user = db.TaiKhoans.SingleOrDefault(u => u.DiaChiEmail.Equals(taiKhoan.DiaChiEmail) || u.SoDienThoai.Equals(taiKhoan.SoDienThoai));
                     if (user == null)
                     {
                         //TẠO MỚI TÀI KHOẢN
@@ -185,7 +185,7 @@ namespace HTComputer.Controllers
                     }
                     else
                     {
-                        ViewBag.Error = "Email đã tồn tại";
+                        ViewBag.Error = "Email hoặc Số điện thoại đã tồn tại!!!";
                         return View(taiKhoan);
                     }
                 }
@@ -582,7 +582,7 @@ namespace HTComputer.Controllers
                     string orderInfo = "DH" + DateTime.Now.ToString();
                     string returnUrl = ConfigurationManager.AppSettings["returnUrl"].ToString();
                     string notifyurl = ConfigurationManager.AppSettings["notifyUrl"].ToString();
-                    string amount = "10000";
+                    string amount = donhang.TongTien.ToString();
                     string orderid = Guid.NewGuid().ToString();
                     string requestId = Guid.NewGuid().ToString();
                     string extraData = "";
